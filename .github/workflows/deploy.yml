@@ -1,0 +1,23 @@
+name: Déploiement GitHub Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+      - name: Construire le site
+        run: |
+          mkdir _site
+          echo '<h1>Bienvenue sur mon site !</h1>' > _site/index.html
+      - name: Upload des fichiers
+        uses: actions/upload-pages-artifact@v3
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Déployer sur GitHub Pages
+        uses: actions/deploy-pages@v4
