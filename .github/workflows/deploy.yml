@@ -12,17 +12,16 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
+  environment:
+      name: github-pages
+  steps:
       - name: Checkout du code
         uses: actions/checkout@v4
 
-      - name: Construire le site
-        run: |
-          mkdir _site
-          echo '<h1>Bienvenue sur mon site !</h1>' > _site/index.html
-
-      - name: Upload des fichiers
+      - name: Upload des fichiers existants
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./index.html
 
       - name: Déployer sur GitHub Pages
         uses: actions/deploy-pages@v4
