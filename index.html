@@ -26,13 +26,18 @@
         </nav>
         <h2 class="display-4 text-center">Qu'est-ce que le kraken?</h2>
         <img src="./images/octopus.svg" alt="" class="w-50 mx-auto d-block">
-        <div class="row bg-dark text-white" id="newsletter-section">
+       <div class="row bg-dark text-white" id="newsletter-section">
             <div class="col-sm-12">
                 <p class="lead">
                     Entrez votre adresse email pour recevoir notre newsletter !
-                    <input type="email" class="form-control" id="newsletter-email">
-                    <button type="button" id="newsletter-button" class="btn btn-success mt-1">Envoyer</button>
                 </p>
+                <label for="newsletter-email">Adresse e-mail :</label>
+                <input type="email" class="form-control" id="newsletter-email" name="email"
+                       placeholder="exemple@domaine.com"
+                       title="Entrez votre adresse e-mail pour recevoir notre newsletter">
+                <button type="button" id="newsletter-button" class="btn btn-success mt-1" title="Cliquez pour vous abonner">
+                    Envoyer
+                </button>
             </div>
         </div>
     </div>
